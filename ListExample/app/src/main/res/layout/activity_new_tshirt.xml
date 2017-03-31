@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/aga_fundo_imagine_grande"
+    tools:context="com.tibaes.listexample.NewTShirtActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite"
+        android:layout_margin="16dp"
+        android:padding="6dp"
+        android:weightSum="1">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="128dp"
+            android:src="@drawable/aga_logo"
+            android:id="@+id/img_new_photo"
+            android:layout_marginBottom="24dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/model"
+            android:paddingLeft="6dp"
+            android:layout_margin="3dp"
+            android:background="@color/colorBlueAGA"
+            android:textColor="@color/colorWhite"
+            android:id="@+id/et_new_model"
+            android:textSize="18dp"/>
+
+        <EditText
+            android:id="@+id/et_new_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:background="@color/colorBlueAGA"
+            android:hint="@string/price"
+            android:inputType="numberDecimal"
+            android:paddingLeft="6dp"
+            android:textColor="@color/colorWhite"
+            android:textSize="18dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/description"
+            android:paddingLeft="6dp"
+            android:layout_margin="3dp"
+            android:background="@color/colorBlueAGA"
+            android:textColor="@color/colorWhite"
+            android:id="@+id/et_new_description"
+            android:textSize="18dp"
+            android:inputType="textMultiLine"
+            android:gravity="top"
+            android:layout_weight="0.18" />
+
+        <EditText
+            android:id="@+id/et_new_amount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:background="@color/colorBlueAGA"
+            android:hint="@string/amount"
+            android:inputType="number"
+            android:paddingLeft="6dp"
+            android:textColor="@color/colorWhite"
+            android:textSize="18dp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/save"
+                android:id="@+id/btn_save_t_shirt"
+                android:background="@color/colorEmerald"
+                android:textColor="@color/colorWhite"
+                android:textSize="24sp"
+                android:layout_marginTop="16dp"/>
+
+        <Button
+            android:id="@+id/btn_delete_t_shirt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorPink"
+            android:text="@string/delete"
+            android:textColor="@color/colorWhite"
+            android:textSize="24sp"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</RelativeLayout>

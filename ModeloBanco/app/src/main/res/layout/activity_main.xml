@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/aga_fundo_imagine_grande"
+    tools:context="com.tibaes.modelobanco.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:foregroundGravity="center"
+        android:layout_margin="20dp"
+        android:background="@color/colorWhite">
+
+    <Button
+        android:id="@+id/btn_t_shirts"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_margin="6dp"
+        android:width="150dp"
+        android:background="@color/colorWhite"
+        android:text="@string/t_shits" />
+
+    <Button
+        android:id="@+id/btn_new_t_shirts"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_margin="6dp"
+        android:width="150dp"
+        android:background="@color/colorWhite"
+        android:text="@string/new_t_shits" />
+    </LinearLayout>
+</RelativeLayout>

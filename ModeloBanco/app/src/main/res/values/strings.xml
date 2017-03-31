@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">ModeloBanco</string>
+    <string name="model">Modelo</string>
+    <string name="description">Descrição</string>
+    <string name="price">Preço</string>
+    <string name="amount">Quantidade</string>
+    <string name="save">Salvar</string>
+    <string name="delete">Deletar</string>
+    <string name="t_shits">CAMISETAS !</string>
+    <string name="new_t_shits">NOVA CAMISETA =]</string>
+</resources>
