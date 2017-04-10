@@ -1,9 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/aga_fundo_imagine_grande"
     tools:context="com.tibaes.agaproject.ShortcutsActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_marginTop="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:text="SOBRE NÓS"
+        android:textColor="@color/colorWhite"
+        android:textSize="36sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/colorWhite"
+        android:layout_margin="16dp"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:id="@+id/tv_site_aga"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@android:drawable/ic_menu_info_details"
+            android:text="http://www.up.edu.br/"
+            android:textSize="26sp"
+            android:paddingTop="10dp"/>
+
+        <TextView
+            android:id="@+id/tv_phone_aga_one"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@android:drawable/ic_menu_call"
+            android:text="(41) 3317-3000"
+            android:textSize="26sp"
+            android:paddingTop="10dp"/>
+
+        <TextView
+            android:id="@+id/tv_email_aga"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@android:drawable/ic_dialog_email"
+            android:text="up@up.br"
+            android:textSize="26sp"
+            android:paddingTop="10dp"/>
+
+        <TextView
+            android:id="@+id/tv_address_aga"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@android:drawable/ic_dialog_map"
+            android:text="ALFERES ÂNGELO SAMPAIO, 2300, BATEL, CURITIBA"
+            android:textSize="26sp"
+            android:paddingTop="10dp"/>
+    </LinearLayout>
+</RelativeLayout>
