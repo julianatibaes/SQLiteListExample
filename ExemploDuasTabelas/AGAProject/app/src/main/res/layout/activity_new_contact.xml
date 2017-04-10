@@ -5,9 +5,45 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/aga_fundo_imagine_grande"
-    tools:context="com.tibaes.listexample.NewTShirtActivity">
+    tools:context="com.tibaes.agaproject.NewContactActivity">
 
     <LinearLayout
+        android:id="@+id/ll_date"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        android:padding="6dp"
+        android:weightSum="1"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone">
+
+
+        <DatePicker
+            android:id="@+id/dp_b_day"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipChildren="false"
+            android:headerBackground="@color/colorBlueAGA" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorBlueAGA"
+            android:text="@android:string/ok"
+            android:textColor="@color/colorWhite"
+            android:textSize="24sp"
+            android:id="@+id/btn_choose_date"/>
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:id="@+id/ll_form"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -28,38 +64,40 @@
                 android:layout_width="match_parent"
                 android:layout_height="128dp"
                 android:src="@drawable/aga_logo"
-                android:id="@+id/img_new_photo"
+                android:id="@+id/img_new_photo_contact"
                 android:layout_marginBottom="24dp"/>
 
             <Button
-                android:id="@+id/btn_get_image"
+                android:id="@+id/btn_get_image_contact"
                 android:layout_width="56dp"
                 android:layout_height="56dp"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginTop="110dp"
                 android:background="@drawable/layout_btn_camera" />
+
+
         </RelativeLayout>
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/model"
+            android:hint="@string/name"
             android:paddingLeft="6dp"
             android:layout_margin="3dp"
             android:background="@color/colorBlueAGA"
             android:textColor="@color/colorWhite"
-            android:id="@+id/et_new_model"
+            android:id="@+id/et_new_name"
             android:textSize="18dp"/>
 
         <EditText
-            android:id="@+id/et_new_price"
+            android:id="@+id/et_new_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="3dp"
             android:background="@color/colorBlueAGA"
-            android:hint="@string/price"
-            android:inputType="numberDecimal"
+            android:hint="@string/email"
+            android:inputType="textEmailAddress"
             android:paddingLeft="6dp"
             android:textColor="@color/colorWhite"
             android:textSize="18dp" />
@@ -67,30 +105,31 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/description"
+            android:hint="@string/phone"
             android:paddingLeft="6dp"
             android:layout_margin="3dp"
             android:background="@color/colorBlueAGA"
             android:textColor="@color/colorWhite"
-            android:id="@+id/et_new_description"
+            android:id="@+id/et_new_phone"
             android:textSize="18dp"
-            android:inputType="textMultiLine"
+            android:inputType="phone"
             android:gravity="top" />
 
-        <EditText
-            android:id="@+id/et_new_amount"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="3dp"
-            android:background="@color/colorBlueAGA"
-            android:hint="@string/amount"
-            android:inputType="number"
-            android:paddingLeft="6dp"
-            android:textColor="@color/colorWhite"
-            android:textSize="18dp" />
+        <TextView
+        android:id="@+id/et_new_b_day"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="3dp"
+        android:background="@color/colorBlueAGA"
+        android:hint="@string/b_day"
+        android:inputType="date"
+        android:paddingLeft="6dp"
+        android:textColor="@color/colorWhite"
+        android:textSize="18dp" />
+
 
         <Button
-            android:id="@+id/btn_save_t_shirt"
+            android:id="@+id/btn_save_contact"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -100,7 +139,7 @@
             android:textSize="24sp" />
 
         <Button
-            android:id="@+id/btn_delete_t_shirt"
+            android:id="@+id/btn_delete_contact"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -109,7 +148,5 @@
             android:textColor="@color/colorWhite"
             android:textSize="24sp"
             android:visibility="gone" />
-
     </LinearLayout>
-
 </RelativeLayout>

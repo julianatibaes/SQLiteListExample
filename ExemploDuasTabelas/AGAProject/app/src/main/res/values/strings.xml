@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Arte Gera Arte</string>
+    <string name="t_shits">Camisetas !</string>
+    <string name="new_t_shits">Nova camiseta</string>
+    <string name="clients">Clientes</string>
+    <string name="new_client">Novo Cliente</string>
+    <string name="model">Modelo</string>
+    <string name="price">Preço</string>
+    <string name="amount">Quantidade</string>
+    <string name="description">Descrição</string>
+    <string name="save">Salvar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="delete">Deletar</string>
+    <string name="name">Nome</string>
+    <string name="email">E-mail</string>
+    <string name="phone">Telefone</string>
+    <string name="b_day">Nascimento</string>
+    <string name="title_activity_encomenda">EncomendaActivity</string>
+    <string name="chose">Escolher</string>
+    <string name="new_sale">Encomendas</string>
+    <string name="shortcuts">Atalhos AGA</string>
+    <string name="title_activity_sales">SalesActivity</string>
+</resources>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/aga_fundo_imagine_grande"
-    tools:context="com.tibaes.listexample.NewTShirtActivity">
+    tools:context="com.tibaes.agaproject.NewTShirtActivity">
 
     <LinearLayout
         android:orientation="vertical"
@@ -109,7 +109,5 @@
             android:textColor="@color/colorWhite"
             android:textSize="24sp"
             android:visibility="gone" />
-
-    </LinearLayout>
-
+        </LinearLayout>
 </RelativeLayout>

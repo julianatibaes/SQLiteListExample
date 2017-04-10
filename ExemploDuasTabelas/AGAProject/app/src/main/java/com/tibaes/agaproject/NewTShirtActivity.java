@@ -1,31 +1,27 @@
-package com.tibaes.listexample;
+package com.tibaes.agaproject;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.tibaes.listexample.dao.TShirtDAO;
-import com.tibaes.listexample.helper.TShirtHelper;
-import com.tibaes.listexample.model.TShirt;
+import com.tibaes.agaproject.dao.TShirtDAO;
+import com.tibaes.agaproject.helper.TShirtHelper;
+import com.tibaes.agaproject.model.TShirt;
 
 import java.io.File;
 
+/**
+ * Created by Juliana Tibães on 08/04/2017.
+ */
 public class NewTShirtActivity extends AppCompatActivity {
 
-    TShirtHelper helper;
-
-    private String caminhoFoto;//novo
-    //private ImageView imgFoto; //novo - remover depois
+    private TShirtHelper helper;
+    private String caminhoFoto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +29,6 @@ public class NewTShirtActivity extends AppCompatActivity {
         setContentView(R.layout.activity_new_tshirt);
 
         helper = new TShirtHelper(NewTShirtActivity.this);
-
-        //imgFoto = (ImageView) findViewById(R.id.img_new_photo); //novo - remover depois
 
         Intent intent = getIntent();
         final TShirt shirt = (TShirt) intent.getSerializableExtra("goShirt");
@@ -44,13 +38,11 @@ public class NewTShirtActivity extends AppCompatActivity {
 
             Button btnDelete = (Button) findViewById(R.id.btn_delete_t_shirt);
             btnDelete.setVisibility(View.VISIBLE);
-
             btnDelete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     TShirtDAO dao = new TShirtDAO(NewTShirtActivity.this);
                     dao.deleteTShirt(shirt);
-
                     dao.close();
                     finish();
                 }
@@ -61,22 +53,20 @@ public class NewTShirtActivity extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Toast.makeText(NewTShirtActivity.this, "Camiseta salva!", Toast.LENGTH_LONG).show();
-
                 TShirt newShirt = helper.getTShirt();
                 TShirtDAO dao = new TShirtDAO(NewTShirtActivity.this);
 
-
                 if(newShirt.getId() != null){
-                    //Toast.makeText(NewTShirtActivity.this, newShirt.getId().toString(), Toast.LENGTH_LONG).show();
                     dao.updateTShirt(newShirt);
+                    Toast.makeText(NewTShirtActivity.this, "Camiseta "+newShirt.getModelo()+ "alterada " +
+                            "com sucesso.", Toast.LENGTH_LONG).show();
                 }
                 else {
                     dao.insertTShirt(newShirt);
+                    Toast.makeText(NewTShirtActivity.this, "Camiseta "+newShirt.getModelo()+ "cadastrada" +
+                            "com sucesso.", Toast.LENGTH_LONG).show();
                 }
-
                 dao.close();
-
                 finish();
             }
         });
@@ -105,11 +95,6 @@ public class NewTShirtActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 123 && resultCode == NewTShirtActivity.RESULT_OK) {
             helper.uploadImage(caminhoFoto);
-            /*Bitmap bitmap = BitmapFactory.decodeFile(caminhoFoto);
-            Bitmap bitmapReduzido = bitmap.createScaledBitmap(bitmap, 150, 150, true);
-            imgFoto.setImageBitmap(bitmapReduzido);
-            imgFoto.setTag(caminhoFoto);
-            */
         }
     }
 }
