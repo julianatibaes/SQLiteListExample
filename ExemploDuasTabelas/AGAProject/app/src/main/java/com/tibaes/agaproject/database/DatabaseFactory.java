@@ -30,7 +30,7 @@ public class DatabaseFactory extends SQLiteOpenHelper {
     public static final String CAMINHO_FOTO_CONTATO = "caminho_foto";
 
     public DatabaseFactory(Context context) {
-        super(context, AGA_DB, null, 8);
+        super(context, AGA_DB, null, 9);
     }
 
     @Override
@@ -44,7 +44,7 @@ public class DatabaseFactory extends SQLiteOpenHelper {
                 CAMINHO_FOTO_CAMISETA+" TEXT" +
                 ");" ;
 
-        String sqlContact = " CREATE TABLE "+CONTATO_TABLE+" ( " +
+        String sqlContact = " CREATE TABLE IF NOT EXISTS "+CONTATO_TABLE+" ( " +
                 ID_CONTATO+" INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 NOME_CONTATO+" TEXT NOT NULL, " +
                 EMAIL_CONTATO+" TEXT, " +

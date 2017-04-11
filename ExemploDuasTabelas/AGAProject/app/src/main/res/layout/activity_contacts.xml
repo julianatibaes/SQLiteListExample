@@ -7,18 +7,24 @@
     android:background="@drawable/aga_fundo_imagine_grande"
     tools:context="com.tibaes.agaproject.ContactsActivity">
 
-    <LinearLayout
-        android:layout_margin="10dp"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorWhite">
+      <RelativeLayout
+          android:id="@+id/rl_fragment_container"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent">
+      </RelativeLayout>
 
-        <ListView
-            android:id="@+id/list_contact"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:elevation="7dp"/>
-    </LinearLayout>
+    <!-- <LinearLayout
+         android:layout_margin="10dp"
+         android:orientation="vertical"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:background="@color/colorWhite">
+
+         <ListView
+             android:id="@+id/list_contact"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:elevation="7dp"/>
+     </LinearLayout> -->
 
 </RelativeLayout>

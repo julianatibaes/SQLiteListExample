@@ -109,8 +109,8 @@ public class ContactAdapter extends BaseAdapter {
             } catch (Exception e){
                 Log.d("DEBUGGER: ", e.getMessage());
             }
-
         }
+
         return view;
     }
 }

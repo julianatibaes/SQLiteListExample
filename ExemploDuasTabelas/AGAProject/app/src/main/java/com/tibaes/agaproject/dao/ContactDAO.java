@@ -26,13 +26,9 @@ public class ContactDAO extends DatabaseFactory {
 
     public void insertContact(Client client) {
         SQLiteDatabase db = getWritableDatabase();
+        ContentValues dados = getContentValues(client);
+        db.insert(CONTATO_TABLE, null, dados);
 
-        try {
-            ContentValues dados = getContentValues(client);
-            db.insert(CONTATO_TABLE, null, dados);
-        }catch (Exception e){
-            Log.e("ERROR: ", e.getMessage());
-        }
     }
 
     public void updateContact(Client client) {

@@ -42,13 +42,18 @@ public class ShortcutsActivity extends AppCompatActivity {
         phone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // abre a tela com os botões para confirmar a ligação ou arrumar algum número se necessário
                 //Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel: " + phone.getText().toString()));
+
+                // verifica se tem a permissão de fazer a ligação, se tiver, já abre a chamada com ligação
                 if (ActivityCompat.checkSelfPermission(ShortcutsActivity.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-                   ActivityCompat.requestPermissions(ShortcutsActivity.this, new String[]{Manifest.permission.CALL_PHONE}, 124);
+                    ActivityCompat.requestPermissions(ShortcutsActivity.this, new String[]{Manifest.permission.CALL_PHONE}, 124);
                 } else{
                     Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel: " + phone.getText().toString()));
                     startActivity(intent);
                 }
+
+
             }
         });
     }

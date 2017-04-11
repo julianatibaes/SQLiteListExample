@@ -1,6 +1,7 @@
 package com.tibaes.agaproject;
 
 import android.content.Intent;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -20,22 +21,33 @@ import java.util.List;
 
 public class ContactsActivity extends AppCompatActivity {
 
-    private ListView listViewContact;
-    private List<Client> clientList;
+    //private ListView listViewContact;
+    //private List<Client> clientList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contacts);
 
-        listViewContact = (ListView) findViewById(R.id.list_contact);
+        // FRAGMENT
+        ClientFragment frag = (ClientFragment)
+                getSupportFragmentManager().findFragmentByTag("mainFrag");
+
+        if(frag == null) {
+            frag = new ClientFragment();
+            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.rl_fragment_container, frag, "mainFrag");
+            ft.commit();
+        }
+
+       /* listViewContact = (ListView) findViewById(R.id.list_contact);
         carregar();
 
         listViewContact.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Client contact = (Client)  listViewContact.getItemAtPosition(position);
-                 Intent intent = new Intent(ContactsActivity.this,
+                Intent intent = new Intent(ContactsActivity.this,
                         NewContactActivity.class);
 
                 // pega os dados do objeto shirt e utiliza o marcador "shirt" para a intent carregar essa informação na hora de 'startar' outra
@@ -43,10 +55,11 @@ public class ContactsActivity extends AppCompatActivity {
                 startActivity(intent);
 
             }
-        });
+        });*/
+
     }
 
-    private void carregar() {
+  /*  private void carregar() {
         ContactDAO dao = new ContactDAO(this);
         clientList = dao.searchContact();
         dao.close();
@@ -64,4 +77,5 @@ public class ContactsActivity extends AppCompatActivity {
         super.onResume();
         carregar();
     }
+*/
 }
